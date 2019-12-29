@@ -32,7 +32,8 @@ contract Violet {
 		balanceOf[msg.sender] -= _value;
 		balanceOf[_to] += _value;
 		// Transfer Event
-
+		Transfer(msg.sender, _to, _value);
 		// Return a boolean
+		return true;
 	}
 }
