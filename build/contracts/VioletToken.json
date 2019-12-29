@@ -16,26 +16,50 @@
       "type": "function"
     },
     {
-      "inputs": [],
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_initialSupply",
+          "type": "uint256"
+        }
+      ],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "constructor"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50620f4240600081905550609e806100296000396000f300608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806318160ddd146044575b600080fd5b348015604f57600080fd5b506056606c565b6040518082815260200191505060405180910390f35b600054815600a165627a7a72305820d0cf129e62817ceca12f3fe426c04ab46947ece3454f55d2d1fd844de1970cbf0029",
-  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806318160ddd146044575b600080fd5b348015604f57600080fd5b506056606c565b6040518082815260200191505060405180910390f35b600054815600a165627a7a72305820d0cf129e62817ceca12f3fe426c04ab46947ece3454f55d2d1fd844de1970cbf0029",
-  "sourceMap": "25:198:0:-;;;161:60;8:9:-1;5:2;;;30:1;27;20:12;5:2;161:60:0;210:7;196:11;:21;;;;25:198;;;;;;",
-  "deployedSourceMap": "25:198:0:-;;;;;;;;;;;;;;;;;;;;;;;;131:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;131:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.2;\n\ncontract VioletToken {\n\t// Constructor allows verification through blockchain transaction of totalSupply\n\tuint256 public totalSupply;\n\n\tfunction VioletToken () public {\n\t\ttotalSupply = 1000000;\n\t}\n}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405160208061015e8339810180604052810190808051906020019092919050505080600081905550506101148061004a6000396000f3006080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806318160ddd14604e57806370a08231146076575b600080fd5b348015605957600080fd5b50606060ca565b6040518082815260200191505060405180910390f35b348015608157600080fd5b5060b4600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505060d0565b6040518082815260200191505060405180910390f35b60005481565b600160205280600052604060002060009150905054815600a165627a7a72305820931f883c13f75b3830b8cebee5ca71b3345063f3067d13cbd18ab00b4bbb8bba0029",
+  "deployedBytecode": "0x6080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806318160ddd14604e57806370a08231146076575b600080fd5b348015605957600080fd5b50606060ca565b6040518082815260200191505060405180910390f35b348015608157600080fd5b5060b4600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505060d0565b6040518082815260200191505060405180910390f35b60005481565b600160205280600052604060002060009150905054815600a165627a7a72305820931f883c13f75b3830b8cebee5ca71b3345063f3067d13cbd18ab00b4bbb8bba0029",
+  "sourceMap": "25:243:0:-;;;144:122;8:9:-1;5:2;;;30:1;27;20:12;5:2;144:122:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;215:14;201:11;:28;;;;144:122;25:243;;;;;;",
+  "deployedSourceMap": "25:243:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;49:26:0;;;;;;;;;;;;;;;;;;;;;;;79:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;79:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:26;;;;:::o;79:44::-;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.2;\n\ncontract VioletToken {\n\tuint256 public totalSupply;\n\n\tmapping(address => uint256) public balanceOf;\n\t\n\t// Constructor\n\tfunction VioletToken (uint256 _initialSupply) public {\n\t\ttotalSupply = _initialSupply;\n\t\t// Allocate the initial supply\n\t}\n}",
   "sourcePath": "/root/Ethereum/Violet (VLT)/contracts/VioletToken.sol",
   "ast": {
     "absolutePath": "/root/Ethereum/Violet (VLT)/contracts/VioletToken.sol",
     "exportedSymbols": {
       "VioletToken": [
-        12
+        18
       ]
     },
-    "id": 13,
+    "id": 19,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -55,9 +79,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 12,
+        "id": 18,
         "linearizedBaseContracts": [
-          12
+          18
         ],
         "name": "VioletToken",
         "nodeType": "ContractDefinition",
@@ -67,8 +91,8 @@
             "id": 3,
             "name": "totalSupply",
             "nodeType": "VariableDeclaration",
-            "scope": 12,
-            "src": "131:26:0",
+            "scope": 18,
+            "src": "49:26:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -79,7 +103,7 @@
               "id": 2,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "131:7:0",
+              "src": "49:7:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -89,27 +113,72 @@
             "visibility": "public"
           },
           {
+            "constant": false,
+            "id": 7,
+            "name": "balanceOf",
+            "nodeType": "VariableDeclaration",
+            "scope": 18,
+            "src": "79:44:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 6,
+              "keyType": {
+                "id": 4,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "87:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "79:27:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 5,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "98:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 10,
+              "id": 16,
               "nodeType": "Block",
-              "src": "192:29:0",
+              "src": "197:69:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 8,
+                    "id": 14,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6,
+                      "id": 12,
                       "name": "totalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "196:11:0",
+                      "src": "201:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -119,36 +188,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "31303030303030",
-                      "id": 7,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "210:7:0",
-                      "subdenomination": null,
+                      "id": 13,
+                      "name": "_initialSupply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9,
+                      "src": "215:14:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_1000000_by_1",
-                        "typeString": "int_const 1000000"
-                      },
-                      "value": "1000000"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "196:21:0",
+                    "src": "201:28:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 9,
+                  "id": 15,
                   "nodeType": "ExpressionStatement",
-                  "src": "196:21:0"
+                  "src": "201:28:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 11,
+            "id": 17,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -156,39 +220,66 @@
             "name": "VioletToken",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4,
+              "id": 10,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "182:2:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9,
+                  "name": "_initialSupply",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17,
+                  "src": "166:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "165:24:0"
             },
             "payable": false,
             "returnParameters": {
-              "id": 5,
+              "id": 11,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "192:0:0"
+              "src": "197:0:0"
             },
-            "scope": 12,
-            "src": "161:60:0",
+            "scope": 18,
+            "src": "144:122:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 13,
-        "src": "25:198:0"
+        "scope": 19,
+        "src": "25:243:0"
       }
     ],
-    "src": "0:223:0"
+    "src": "0:268:0"
   },
   "legacyAST": {
     "absolutePath": "/root/Ethereum/Violet (VLT)/contracts/VioletToken.sol",
     "exportedSymbols": {
       "VioletToken": [
-        12
+        18
       ]
     },
-    "id": 13,
+    "id": 19,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -208,9 +299,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 12,
+        "id": 18,
         "linearizedBaseContracts": [
-          12
+          18
         ],
         "name": "VioletToken",
         "nodeType": "ContractDefinition",
@@ -220,8 +311,8 @@
             "id": 3,
             "name": "totalSupply",
             "nodeType": "VariableDeclaration",
-            "scope": 12,
-            "src": "131:26:0",
+            "scope": 18,
+            "src": "49:26:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -232,7 +323,7 @@
               "id": 2,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "131:7:0",
+              "src": "49:7:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -242,27 +333,72 @@
             "visibility": "public"
           },
           {
+            "constant": false,
+            "id": 7,
+            "name": "balanceOf",
+            "nodeType": "VariableDeclaration",
+            "scope": 18,
+            "src": "79:44:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 6,
+              "keyType": {
+                "id": 4,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "87:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "79:27:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 5,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "98:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 10,
+              "id": 16,
               "nodeType": "Block",
-              "src": "192:29:0",
+              "src": "197:69:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 8,
+                    "id": 14,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6,
+                      "id": 12,
                       "name": "totalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "196:11:0",
+                      "src": "201:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -272,36 +408,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "31303030303030",
-                      "id": 7,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "210:7:0",
-                      "subdenomination": null,
+                      "id": 13,
+                      "name": "_initialSupply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9,
+                      "src": "215:14:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_1000000_by_1",
-                        "typeString": "int_const 1000000"
-                      },
-                      "value": "1000000"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "196:21:0",
+                    "src": "201:28:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 9,
+                  "id": 15,
                   "nodeType": "ExpressionStatement",
-                  "src": "196:21:0"
+                  "src": "201:28:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 11,
+            "id": 17,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -309,30 +440,57 @@
             "name": "VioletToken",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4,
+              "id": 10,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "182:2:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9,
+                  "name": "_initialSupply",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17,
+                  "src": "166:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 8,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "165:24:0"
             },
             "payable": false,
             "returnParameters": {
-              "id": 5,
+              "id": 11,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "192:0:0"
+              "src": "197:0:0"
             },
-            "scope": 12,
-            "src": "161:60:0",
+            "scope": 18,
+            "src": "144:122:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 13,
-        "src": "25:198:0"
+        "scope": 19,
+        "src": "25:243:0"
       }
     ],
-    "src": "0:223:0"
+    "src": "0:268:0"
   },
   "compiler": {
     "name": "solc",
@@ -342,10 +500,10 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x3c0961be9ac5a77e639cb49b239bbe1d87f87268",
-      "transactionHash": "0xd3d324f2343138e3c1f27f6f0b173fa4a0bbb072eb5c6713540ddb5374e30e13"
+      "address": "0xb67d1be3d69e0c723ba107d1dc2531ce04f9bd17",
+      "transactionHash": "0x16cedf5368081442d5e086b52e733a924986e0c4eed00fdd82d8462a2bb9a0e1"
     }
   },
   "schemaVersion": "2.0.3",
-  "updatedAt": "2019-12-29T02:10:55.351Z"
+  "updatedAt": "2019-12-29T04:40:35.667Z"
 }

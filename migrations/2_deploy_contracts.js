@@ -1,5 +1,4 @@
-const VioletToken = artifacts.require("VioletToken");
-
+const Violet = artifacts.require("Violet");
 module.exports = function(deployer) {
-  deployer.deploy(VioletToken);
+  deployer.deploy(Violet, 1000000);
 };
